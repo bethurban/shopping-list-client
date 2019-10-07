@@ -40,7 +40,15 @@ class NewItem extends Component {
       }
     })
       .then(response => response.json())
-      .then(json => console.log("JSON: ", json))
+      .then(json => {
+        console.log("JSON: ", json);
+        this.setState({
+          name: '',
+          amount: 0,
+          section: ''
+        });
+      }
+      )
   }
 
   render() {
