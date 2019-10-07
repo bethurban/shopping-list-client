@@ -25,7 +25,22 @@ class NewItem extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted");
+
+    const data = {
+      name: this.state.name,
+      amount: this.state.amount,
+      section: this.state.section
+    };
+
+    fetch('https://still-plateau-90264.herokuapp.com/items', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(json => console.log("JSON: ", json))
   }
 
   render() {
