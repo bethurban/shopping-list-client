@@ -39,16 +39,13 @@ class NewItem extends Component {
         'Content-Type': 'application/json'
       }
     })
-      .then(response => response.json())
-      .then(json => {
-        console.log("JSON: ", json);
+      .then(() => {
         this.setState({
           name: '',
           amount: 0,
           section: ''
         });
-      }
-      )
+      });
   }
 
   render() {

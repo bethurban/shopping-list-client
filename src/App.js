@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import NewItem from './containers/NewItem.js';
+import ItemList from './containers/ItemList.js';
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
 
       <div className="form">
         <NewItem />
+      </div>
+
+      <div className="ItemList">
+        <ItemList />
       </div>
     </div>
   );
