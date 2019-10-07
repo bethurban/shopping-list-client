@@ -21,11 +21,6 @@ class ItemList extends Component {
         this.setState({
           items: json
         })
-        // json.map(item =>  (
-        //   <div class="item">
-        //     <ItemCard name={item.name} amount={item.amount} section={item.section} />
-        //   </div>
-        // ))
       });
   };
 
@@ -38,8 +33,17 @@ class ItemList extends Component {
   }
 
   render() {
+
+    const itemList = this.state.items.map(item =>  (
+      <div class="item">
+        <ItemCard name={item.name} amount={item.amount} section={item.section} />
+      </div>
+    ));
+
     return (
-      <h2>List</h2>
+      <div className="ItemList">
+        {itemList}
+      </div>
     )
   };
 
