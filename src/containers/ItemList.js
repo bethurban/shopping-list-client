@@ -28,15 +28,19 @@ class ItemList extends Component {
     this.getItems()
   }
 
-  componentDidUpdate() {
-    this.getItems()
-  }
+  // componentDidUpdate(prevState) {
+  //   debugger
+  //   if (this.state.items !== prevState.items) {
+  //     this.getItems()
+  //   }
+  //
+  // }
 
   render() {
 
     const itemList = this.state.items.map(item =>  (
-      <div class="item">
-        <ItemCard name={item.name} amount={item.amount} section={item.section} />
+      <div className="item">
+        <ItemCard key={item.id} id={item.id} name={item.name} amount={item.amount} section={item.section} />
       </div>
     ));
 
